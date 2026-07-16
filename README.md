@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="apps/web/public/assets/processed/banners/platform-0.3-background.png" alt="asamu 项目封面" width="100%" />
-</p>
-
-
 <h1 align="center">asamu</h1>
 
 <p align="center">
