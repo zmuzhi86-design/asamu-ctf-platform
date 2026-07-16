@@ -8,7 +8,7 @@
 
 <p align="center">
 
-  <img src="docs/images/index.png" width="100%" alt="ASAMU 平台首页"> 
+  <img src="asamu-vm-0.3.1/docs/images/index.png" width="100%" alt="ASAMU 平台首页"> 
 
 </p>
 
@@ -20,7 +20,7 @@
 
 <p align="center">
 
-  <img src="docs/images/game.png" width="100%" alt="ASAMU 动态靶场"> 
+  <img src="asamu-vm-0.3.1/docs/images/game.png" width="100%" alt="ASAMU 动态靶场"> 
 
 </p>
 
@@ -32,7 +32,7 @@
 
 <p align="center">
 
-  <img src="docs/images/study.png" width="100%" alt="ASAMU 管理后台"> 
+  <img src="asamu-vm-0.3.1/docs/images/study.png" width="100%" alt="ASAMU 管理后台"> 
 
 </p>
 <h1 align="center">asamu</h1>
