@@ -1,0 +1,22 @@
+{
+  "source": "首页 Hero 区.png",
+  "width": 1672,
+  "height": 941,
+  "aspectRatio": 1.7768,
+  "hasAlpha": true,
+  "dominantColor": "#f3f3f5",
+  "sha256": "3473add8782bc0f0a7aeac32d2eb5ca238ff628bb3c49b55c19a697f421aa756",
+  "safeArea": {
+    "top": 6,
+    "right": 6,
+    "bottom": 6,
+    "left": 38
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "right center",
+  "version": 1
+}

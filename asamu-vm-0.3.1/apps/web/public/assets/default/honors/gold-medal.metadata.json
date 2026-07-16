@@ -1,0 +1,22 @@
+{
+  "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_11 (3).png",
+  "width": 1254,
+  "height": 1254,
+  "aspectRatio": 1.0,
+  "hasAlpha": true,
+  "dominantColor": "#f9f9f9",
+  "sha256": "00de5b050e307fa6e265d56ffd2408f835073d4d5c821795c16d557e16d283ba",
+  "safeArea": {
+    "top": 8,
+    "right": 8,
+    "bottom": 8,
+    "left": 8
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "center",
+  "version": 1
+}

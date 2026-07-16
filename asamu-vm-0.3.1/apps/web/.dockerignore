@@ -1,0 +1,7 @@
+node_modules
+.npm-cache
+dist
+.env*
+public/assets/raw
+public/assets/default/_source_v3
+*.log

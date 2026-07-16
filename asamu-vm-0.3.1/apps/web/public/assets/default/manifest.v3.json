@@ -1,0 +1,1103 @@
+{
+  "schemaVersion": 3,
+  "release": "0.3.1",
+  "assets": {
+    "background.platform.light": {
+      "path": "/assets/processed/banners/platform-0.3-background.png",
+      "thumb": "/assets/processed/banners/platform-0.3-background.png",
+      "source": "asamu 0.3 平台背景.png",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.7768,
+      "hasAlpha": false,
+      "dominantColor": "#f7fbff",
+      "sha256": "873838e953e0778876c699369f69a480c9a489291cf3e379fcee548d4de8bb7a",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "cover",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "home.hero": {
+      "path": "/assets/default/home/home-hero.webp",
+      "thumb": "/assets/default/home/home-hero.thumb.webp",
+      "source": "首页 Hero 区.png",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.7768,
+      "hasAlpha": true,
+      "dominantColor": "#f3f3f5",
+      "sha256": "3473add8782bc0f0a7aeac32d2eb5ca238ff628bb3c49b55c19a697f421aa756",
+      "safeArea": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 38
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "right center",
+      "version": 1
+    },
+    "training.route.hero": {
+      "path": "/assets/default/training/training-route-map.webp",
+      "thumb": "/assets/default/training/training-route-map.thumb.webp",
+      "source": "训练路线推荐卡.png",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.7768,
+      "hasAlpha": true,
+      "dominantColor": "#c7d2e5",
+      "sha256": "611bebec927887330b91943d3bf55fc78cb79baf21949eefce5e9bbe7fe04069",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "competition.hero": {
+      "path": "/assets/default/competitions/competition-hero.webp",
+      "thumb": "/assets/default/competitions/competition-hero.thumb.webp",
+      "source": "比赛中心主视觉.png",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.7768,
+      "hasAlpha": true,
+      "dominantColor": "#dee7f2",
+      "sha256": "96e34f7e65770507c19618e88e5a46dfe91b27163e37bf510af53746ccdea051",
+      "safeArea": {
+        "top": 6,
+        "right": 8,
+        "bottom": 6,
+        "left": 38
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "right center",
+      "version": 1
+    },
+    "team.profile.banner": {
+      "path": "/assets/default/teams/team-profile-banner.webp",
+      "thumb": "/assets/default/teams/team-profile-banner.thumb.webp",
+      "source": "战队主页 Banner.png",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.7768,
+      "hasAlpha": true,
+      "dominantColor": "#e1e5ee",
+      "sha256": "313a77c6aa82ed913df16a1f7afbb634372703765bfebd55693eb90aecad7e1e",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.base.hero": {
+      "path": "/assets/default/teams/team-base-hero.webp",
+      "thumb": "/assets/default/teams/team-base-hero.thumb.webp",
+      "source": "战队基地推荐卡  战队广场主视觉.png",
+      "width": 1916,
+      "height": 821,
+      "aspectRatio": 2.3337,
+      "hasAlpha": true,
+      "dominantColor": "#fafafa",
+      "sha256": "10d73ed64031dca68f408e0f829ed79b2d61635f6703de1deaffdb9df496d274",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 42
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "right center",
+      "version": 1
+    },
+    "team.announcement": {
+      "path": "/assets/default/teams/team-announcement.webp",
+      "thumb": "/assets/default/teams/team-announcement.thumb.webp",
+      "source": "战队公告.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f4f4f4",
+      "sha256": "93ae1e509f6d10a5416797dad606743673829684c9a8314f35f6a2583e965063",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "home.quick.start_training": {
+      "path": "/assets/default/home/quick-start-training.webp",
+      "thumb": "/assets/default/home/quick-start-training.thumb.webp",
+      "source": "首页四张素材/ChatGPT Image 2026年7月11日 13_04_40 (1).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#fafafa",
+      "sha256": "806cd5c03ac0567f2cc0997d32a67d2e8aeb3bf0fcf3766e195c80eb8a4f41b1",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "home.quick.join_competition": {
+      "path": "/assets/default/home/quick-join-competition.webp",
+      "thumb": "/assets/default/home/quick-join-competition.thumb.webp",
+      "source": "首页四张素材/ChatGPT Image 2026年7月11日 13_04_40 (2).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#fafaf9",
+      "sha256": "caf42b032c6f3569b31d7531a0d7d2e442ff87577141a21a2e11db93b763e642",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "home.quick.create_team": {
+      "path": "/assets/default/home/quick-create-team.webp",
+      "thumb": "/assets/default/home/quick-create-team.thumb.webp",
+      "source": "首页四张素材/ChatGPT Image 2026年7月11日 13_04_40 (3).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#fbfbfb",
+      "sha256": "24a7e69888b2c7b24e94d85a15ee2213cb9697390abdbea05c0f1c5d1a95433a",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "home.quick.read_writeup": {
+      "path": "/assets/default/home/quick-read-writeup.webp",
+      "thumb": "/assets/default/home/quick-read-writeup.thumb.webp",
+      "source": "首页四张素材/ChatGPT Image 2026年7月11日 13_04_41 (4).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#fafafa",
+      "sha256": "d2de1a5d8490d982667763e23c29f6f08505993e2f660229936af3b6e31abb1d",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.web.scene": {
+      "path": "/assets/default/directions/web.webp",
+      "thumb": "/assets/default/directions/web.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (1).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#a9d1f5",
+      "sha256": "f86ae9a97838342ee2e508f9dec2690be9628dc28096dec8056461e8704fd365",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.pwn.scene": {
+      "path": "/assets/default/directions/pwn.webp",
+      "thumb": "/assets/default/directions/pwn.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (2).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#e1e6ef",
+      "sha256": "0511bf8c262136b1e2a87cf09c5abb951fb300825ba64ebac5ac4d584e0279b4",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.reverse.scene": {
+      "path": "/assets/default/directions/reverse.webp",
+      "thumb": "/assets/default/directions/reverse.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (3).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f7f7f7",
+      "sha256": "ea5cd58bf37dac4d79c95e33828dbfa64d6979dbcb6cddb7454f24ec52b10785",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.crypto.scene": {
+      "path": "/assets/default/directions/crypto.webp",
+      "thumb": "/assets/default/directions/crypto.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (4).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#8a96d7",
+      "sha256": "aaded438a06e02c9a24a4b630c425180cead921832a18cc3c73f0285f04991ea",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.misc.scene": {
+      "path": "/assets/default/directions/misc.webp",
+      "thumb": "/assets/default/directions/misc.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (5).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f4f0f5",
+      "sha256": "007bf99829df5e53222fcea895b6bd469dc26fdc717f70fd42c96a22018b1e32",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.forensics.scene": {
+      "path": "/assets/default/directions/forensics.webp",
+      "thumb": "/assets/default/directions/forensics.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (6).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#bfb3c3",
+      "sha256": "c081cc6af765deefc7f5d448968f62740a40446af59ee9910b5b8e1a89ed88d1",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.iot.scene": {
+      "path": "/assets/default/directions/iot.webp",
+      "thumb": "/assets/default/directions/iot.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (7).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f7f7f7",
+      "sha256": "ea062def67f2485b459c0e5be188c1843bfb9139a5fa6ebfe43c24c68aca4e96",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.mobile.scene": {
+      "path": "/assets/default/directions/mobile.webp",
+      "thumb": "/assets/default/directions/mobile.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (8).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#dedfeb",
+      "sha256": "20800ef0fb8c99782512f352746be2df8c7a5a412a51eebdf34f1bf735333fd9",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.cloud.scene": {
+      "path": "/assets/default/directions/cloud.webp",
+      "thumb": "/assets/default/directions/cloud.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (9).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#dee2f5",
+      "sha256": "b36aca3532591395bc42790ed19771f3d4378d02d697d6a37dd8dc77a809152e",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "direction.ai_security.scene": {
+      "path": "/assets/default/directions/ai-security.webp",
+      "thumb": "/assets/default/directions/ai-security.thumb.webp",
+      "source": "探索方向/ChatGPT Image 2026年7月11日 10_47_17 (10).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#eff1f6",
+      "sha256": "cde9fefb35249678b9f2c9dc8ddb22221ce21378cf61c808b82c894da3f26a0a",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "character.student.male.default": {
+      "path": "/assets/default/characters/student-male-default.webp",
+      "thumb": "/assets/default/characters/student-male-default.thumb.webp",
+      "source": "人物素材/ChatGPT Image 2026年7月11日 10_17_02 (1).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#fcfcfc",
+      "sha256": "7d0e92222f13e5fde02823b6a29264bb2c4d54350d642d9a5ff6178a1327e809",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "character.student.male.presenter": {
+      "path": "/assets/default/characters/student-male-presenter.webp",
+      "thumb": "/assets/default/characters/student-male-presenter.thumb.webp",
+      "source": "人物素材/ChatGPT Image 2026年7月11日 10_17_02 (2).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "3da2a5b305f3fbef64a675d2194debaf8ca97adc7ff3ef2157859647a30ffb90",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "character.student.female.default": {
+      "path": "/assets/default/characters/student-female-default.webp",
+      "thumb": "/assets/default/characters/student-female-default.thumb.webp",
+      "source": "人物素材/ChatGPT Image 2026年7月11日 10_17_02 (3).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f8f8",
+      "sha256": "6ef23fb3b2ce8bb77a2ae188c40cb903b0a4fbb0bc9af77b6194d249def82d8f",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "character.student.female.analyst": {
+      "path": "/assets/default/characters/student-female-analyst.webp",
+      "thumb": "/assets/default/characters/student-female-analyst.thumb.webp",
+      "source": "人物素材/ChatGPT Image 2026年7月11日 10_17_03 (4).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "e7fb6508fc1ec787d8e900176d8db0a1c7971b66bd5ce8cec5dad622d6a79d17",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.bronze.main": {
+      "path": "/assets/default/ranks/bronze.webp",
+      "thumb": "/assets/default/ranks/bronze.thumb.webp",
+      "source": "等级素材/青铜.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "06620547e4944a6a0717ad7c38bc5b06ece9d9fa92b9dc046cdb3f5e1bdb11e2",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.silver.main": {
+      "path": "/assets/default/ranks/silver.webp",
+      "thumb": "/assets/default/ranks/silver.thumb.webp",
+      "source": "等级素材/白银.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f6f6f6",
+      "sha256": "0f4b1d21fa144ed5a0ea8673f24874a8352deca6e23b152850aed79832670ad9",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.gold.main": {
+      "path": "/assets/default/ranks/gold.webp",
+      "thumb": "/assets/default/ranks/gold.thumb.webp",
+      "source": "等级素材/黄金.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f8f8f8",
+      "sha256": "7a45723ccc4acbd6fbe8c372cf9b7dbca136978a073aaddc2eda3bf8664d8fb3",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.platinum.main": {
+      "path": "/assets/default/ranks/platinum.webp",
+      "thumb": "/assets/default/ranks/platinum.thumb.webp",
+      "source": "等级素材/铂金.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "bb7faa8905068479ee403837ae54d7b19bf6186986085f4f4439c5cd27072ae4",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.diamond.main": {
+      "path": "/assets/default/ranks/diamond.webp",
+      "thumb": "/assets/default/ranks/diamond.thumb.webp",
+      "source": "等级素材/钻石.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f6f4f4",
+      "sha256": "51a5cc2f7733e5dbcb69e9220cb3b3f890148a7530658f93d8d3351f6d6493ec",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.master.main": {
+      "path": "/assets/default/ranks/master.webp",
+      "thumb": "/assets/default/ranks/master.thumb.webp",
+      "source": "等级素材/大师.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f6f6f6",
+      "sha256": "da6cf0017c384ba2add524d3f9dd930cf98dde965a15128e96eeb6ec48b78a29",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.king.main": {
+      "path": "/assets/default/ranks/king.webp",
+      "thumb": "/assets/default/ranks/king.thumb.webp",
+      "source": "等级素材/王者.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f3e0c7",
+      "sha256": "57a491b7924aac3fe3931ed7ea7b4b6ece3437920b9116202098f12db9cfd38d",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "rank.legend.main": {
+      "path": "/assets/default/ranks/legend.webp",
+      "thumb": "/assets/default/ranks/legend.thumb.webp",
+      "source": "等级素材/超神.png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#fbf9f9",
+      "sha256": "c43b6f0f764bbfa44b972098ed3f8bdacacc86cc75a0af22a43d44b6c2a106e0",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.honor.champion": {
+      "path": "/assets/default/honors/champion-trophy.webp",
+      "thumb": "/assets/default/honors/champion-trophy.thumb.webp",
+      "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_11 (2).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "bf490b32ef60c2163ff8feee7b79ff91dd08464b17acf7f6ed8dab44d23bbf93",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.honor.gold": {
+      "path": "/assets/default/honors/gold-medal.webp",
+      "thumb": "/assets/default/honors/gold-medal.thumb.webp",
+      "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_11 (3).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "00de5b050e307fa6e265d56ffd2408f835073d4d5c821795c16d557e16d283ba",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.honor.silver": {
+      "path": "/assets/default/honors/silver-medal.webp",
+      "thumb": "/assets/default/honors/silver-medal.thumb.webp",
+      "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_12 (4).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f8f8f9",
+      "sha256": "d9be8d04ff170446184c9e40410699961e754f842e6833ea685212c5250a5b41",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.honor.bronze": {
+      "path": "/assets/default/honors/bronze-medal.webp",
+      "thumb": "/assets/default/honors/bronze-medal.thumb.webp",
+      "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_12 (5).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f8f8f8",
+      "sha256": "450ed149301760df5543585c738a948a4814b5a91ebb58896ae2eee3e99d7d57",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.honor.elite": {
+      "path": "/assets/default/honors/elite-three-star.webp",
+      "thumb": "/assets/default/honors/elite-three-star.thumb.webp",
+      "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_12 (6).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9f9",
+      "sha256": "71e60fd94c74891f49f8c0e1909ec0587ffd613942869f40d77aaa45b6530b62",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "team.honor.verified": {
+      "path": "/assets/default/honors/verified-team.webp",
+      "thumb": "/assets/default/honors/verified-team.thumb.webp",
+      "source": "荣誉墙/ChatGPT Image 2026年7月11日 13_14_12 (7).png",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": 1.0,
+      "hasAlpha": true,
+      "dominantColor": "#f9f9fa",
+      "sha256": "745222d67412ac1dc5eafb082990ace8e4b117ba39acd9c89db07d43ae8997cd",
+      "safeArea": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.idle": {
+      "path": "/assets/processed/environment/idle.png",
+      "thumb": "/assets/processed/environment/idle.png",
+      "width": 304,
+      "height": 320,
+      "aspectRatio": 0.95,
+      "hasAlpha": true,
+      "dominantColor": "#2d466f",
+      "sha256": "6114976ca0ba1a14ddfd43f80dc9f543711d4fe9a69c5ea5b8c46f79081e8cdc",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.starting": {
+      "path": "/assets/processed/environment/starting.png",
+      "thumb": "/assets/processed/environment/starting.png",
+      "width": 309,
+      "height": 360,
+      "aspectRatio": 0.8583,
+      "hasAlpha": true,
+      "dominantColor": "#88afd8",
+      "sha256": "f6032b17b7a813c58d3b7e18b11c5f584af00f7b5afd0b2b26ba72a1921c26ef",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.running": {
+      "path": "/assets/processed/environment/running.png",
+      "thumb": "/assets/processed/environment/running.png",
+      "width": 300,
+      "height": 388,
+      "aspectRatio": 0.7732,
+      "hasAlpha": true,
+      "dominantColor": "#a7cbc7",
+      "sha256": "ef08dc8ccd49609b8e7a5bd5ff0aeb7057f8f899910cbd04dc67f4ca9146c20d",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.resetting": {
+      "path": "/assets/processed/environment/resetting.png",
+      "thumb": "/assets/processed/environment/resetting.png",
+      "width": 275,
+      "height": 366,
+      "aspectRatio": 0.7514,
+      "hasAlpha": true,
+      "dominantColor": "#839eca",
+      "sha256": "8acae7e2c9147082f20731f730bf4e2a6ca2a71cee80323131d7638b9da5f7a2",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.failed": {
+      "path": "/assets/processed/environment/failed.png",
+      "thumb": "/assets/processed/environment/failed.png",
+      "width": 290,
+      "height": 382,
+      "aspectRatio": 0.7592,
+      "hasAlpha": true,
+      "dominantColor": "#b08bad",
+      "sha256": "9e19b3eef1f59ea211aeb41348cc02d381fad20ac1c18e548b1b150ca964b517",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.expired": {
+      "path": "/assets/processed/environment/expired.png",
+      "thumb": "/assets/processed/environment/expired.png",
+      "width": 302,
+      "height": 371,
+      "aspectRatio": 0.814,
+      "hasAlpha": true,
+      "dominantColor": "#3b5581",
+      "sha256": "c6d5eaced15c921b51c1e2343519f7f95e3c55bdb4b1dee353b7ead97c59436b",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    },
+    "challenge.instance.maintenance": {
+      "path": "/assets/processed/environment/maintenance.png",
+      "thumb": "/assets/processed/environment/maintenance.png",
+      "width": 294,
+      "height": 375,
+      "aspectRatio": 0.784,
+      "hasAlpha": true,
+      "dominantColor": "#7788b8",
+      "sha256": "8bde4e75980572371fe99d475efdf0883082e1de322d5d0283384ed65727a4cd",
+      "safeArea": {
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "left": 4
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      },
+      "recommendedObjectFit": "contain",
+      "recommendedObjectPosition": "center",
+      "version": 1
+    }
+  }
+}

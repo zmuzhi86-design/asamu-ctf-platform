@@ -1,0 +1,22 @@
+{
+  "source": "人物素材/ChatGPT Image 2026年7月11日 10_17_02 (3).png",
+  "width": 1254,
+  "height": 1254,
+  "aspectRatio": 1.0,
+  "hasAlpha": true,
+  "dominantColor": "#f9f8f8",
+  "sha256": "6ef23fb3b2ce8bb77a2ae188c40cb903b0a4fbb0bc9af77b6194d249def82d8f",
+  "safeArea": {
+    "top": 8,
+    "right": 8,
+    "bottom": 8,
+    "left": 8
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "center",
+  "version": 1
+}

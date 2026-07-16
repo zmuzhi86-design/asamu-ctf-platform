@@ -1,0 +1,6 @@
+.gocache
+.gomodcache
+var
+coverage
+*.log
+.env*

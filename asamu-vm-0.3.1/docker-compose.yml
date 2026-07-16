@@ -1,0 +1,206 @@
+name: asamu
+
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:-postgres:16-alpine}
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-asamu}
+      POSTGRES_USER: ${POSTGRES_USER:-asamu}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-asamu} -d $${POSTGRES_DB:-asamu}"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+    stop_grace_period: 30s
+    restart: unless-stopped
+    networks:
+      - platform
+
+  redis:
+    image: ${REDIS_IMAGE:-redis:7.2-alpine}
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --requirepass
+      - ${REDIS_PASSWORD:?REDIS_PASSWORD is required}
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?REDIS_PASSWORD is required}
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping 2>/dev/null | grep -q PONG"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 5s
+    stop_grace_period: 20s
+    restart: unless-stopped
+    networks:
+      - platform
+
+  init:
+    image: ${API_IMAGE:-asamu/api}:${APP_VERSION:-dev}
+    env_file:
+      - .env.docker
+    entrypoint: ["/bin/sh", "-ec"]
+    command: ["asamu migrate up && asamu seed && asamu doctor"]
+    volumes:
+      - ./apps/web/public/assets/default/manifest.v3.json:/app/assets/manifest.v3.json:ro
+      - asset-data:/app/var/storage
+    environment:
+      ASSET_MANIFEST_PATH: /app/assets/manifest.v3.json
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: "no"
+    networks:
+      - platform
+
+  api:
+    image: ${API_IMAGE:-asamu/api}:${APP_VERSION:-dev}
+    command: ["serve"]
+    env_file:
+      - .env.docker
+    volumes:
+      - asset-data:/app/var/storage
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8787/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 20s
+    restart: unless-stopped
+    networks:
+      - platform
+
+
+  worker:
+    profiles: ["runtime"]
+    image: ${WORKER_IMAGE:-asamu/runtime-worker}:${APP_VERSION:-dev}
+    hostname: ${RUNTIME_WORKER_ID:-asamu-runtime-worker}
+    env_file:
+      - .env.docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    restart: unless-stopped
+    networks:
+      - platform
+
+  web:
+    image: ${WEB_IMAGE:-asamu/web}:${APP_VERSION:-dev}
+    ports:
+      - "${HTTP_PORT:-8080}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 10s
+    restart: unless-stopped
+    networks:
+      - platform
+      - edge
+
+  builder:
+    profiles: ["builder"]
+    image: ${BUILDKIT_IMAGE:-moby/buildkit:v0.23.2-rootless}
+    command: ["--addr", "tcp://0.0.0.0:1234"]
+    environment:
+      BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
+    volumes:
+      - buildkit-state:/home/user/.local/share/buildkit
+    security_opt:
+      - seccomp=unconfined
+      - apparmor=unconfined
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /run/user/1000
+    restart: unless-stopped
+    networks:
+      - builder
+
+  proxy:
+    profiles: ["proxy"]
+    image: ${TRAEFIK_IMAGE:-traefik:v3.5.0}
+    command: ["--configFile=/etc/traefik/traefik.yml"]
+    ports:
+      - "${PROXY_HTTP_PORT:-80}:80"
+      - "${PROXY_HTTPS_PORT:-443}:443"
+    volumes:
+      - ./deploy/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./deploy/traefik/dynamic.yml:/etc/traefik/dynamic.yml:ro
+      - ./deploy/traefik/certs:/etc/traefik/certs:ro
+    depends_on:
+      web:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    networks:
+      - edge
+
+networks:
+  platform:
+    driver: bridge
+  edge:
+    driver: bridge
+  builder:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    name: ${POSTGRES_VOLUME_NAME:-asamu_postgres-data}
+  redis-data:
+    name: ${REDIS_VOLUME_NAME:-asamu_redis-data}
+  asset-data:
+    name: ${ASSET_VOLUME_NAME:-asamu_asset-data}
+  buildkit-state:
+    name: ${BUILDKIT_VOLUME_NAME:-asamu_buildkit-state}

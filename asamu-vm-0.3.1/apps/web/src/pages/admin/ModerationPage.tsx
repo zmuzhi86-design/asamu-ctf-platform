@@ -1,0 +1,20 @@
+import { useCallback, useEffect, useState } from 'react'
+import { PageHeader, PixelButton, PixelCard, PixelTag } from '../../components/ui/System'
+import { ApiError, apiRequest } from '../../services/apiClient'
+import type { WriteupDto } from '../../services/platformApi'
+
+type Page<T> = { items: T[] }
+type CheatCase = { id: string; status: string; risk_level?: string; riskScore?: number; risk_score?: number; resolution?: string; created_at?: string; createdAt?: string }
+
+export function ModerationPage({ kind }: { kind: 'writeups' | 'anti-cheat' }) {
+  const [writeups, setWriteups] = useState<WriteupDto[]>([])
+  const [cases, setCases] = useState<CheatCase[]>([])
+  const [error, setError] = useState('')
+  const [message, setMessage] = useState('')
+  const load = useCallback(() => { const request = kind === 'writeups' ? apiRequest<Page<WriteupDto>>('/admin/writeups?pageSize=100').then((page) => setWriteups(page.items)) : apiRequest<Page<CheatCase>>('/admin/anti-cheat?pageSize=100').then((page) => setCases(page.items)); return request.catch((reason: Error) => setError(reason.message)) }, [kind])
+  useEffect(() => { load() }, [load])
+  const run = async (action: () => Promise<unknown>, success: string) => { setError(''); setMessage(''); try { await action(); setMessage(success); await load() } catch (reason) { setError(reason instanceof ApiError ? reason.message : '操作失败') } }
+  const review = (item: WriteupDto, action: 'publish' | 'reject') => { const note = action === 'reject' ? window.prompt('请输入驳回原因（必填）') : window.prompt('可填写审核备注', '') ?? ''; if (action === 'reject' && !note) return; if (window.confirm(`确认${action === 'publish' ? '发布' : '驳回'}《${item.title}》？`)) run(() => apiRequest(`/admin/writeups/${item.id}/review`, { method: 'POST', body: JSON.stringify({ action, note }) }), `文章已${action === 'publish' ? '发布' : '驳回'}。`) }
+  const resolve = (item: CheatCase) => { const resolution = window.prompt('请输入结案结论'); if (!resolution) return; const note = window.prompt('补充内部备注（可选）', '') ?? ''; if (window.confirm('确认关闭该案件？')) run(() => apiRequest(`/admin/anti-cheat/${item.id}`, { method: 'PATCH', body: JSON.stringify({ status: 'closed', resolution, note }) }), '案件已结案并写入审计。') }
+  return <><PageHeader eyebrow="TRUST & SAFETY" title={kind === 'writeups' ? 'WriteUp 审核' : '反作弊中心'} description={kind === 'writeups' ? '预览服务端清洗后的内容，发布或退回作者修改。' : '审阅风险案件、记录结论并保留内部备注。'} />{message && <p className="mb-4 border-2 border-green-400 bg-green-50 p-3 text-sm font-black text-green-700">{message}</p>}{error && <p className="mb-4 border-2 border-red-400 bg-red-50 p-3 text-sm font-black text-red-700">{error}</p>}{kind === 'writeups' ? <div className="space-y-5">{writeups.map((item) => <PixelCard title={<span>{item.title} <PixelTag tone={item.status === 'review' ? 'yellow' : item.status === 'published' ? 'green' : 'slate'}>{item.status}</PixelTag></span>} key={item.id}><p className="mb-4 text-sm font-semibold text-asamu-muted">{item.author} · {item.challengeTitle} · {item.visibility}</p><p className="mb-4 border-l-4 border-asamu-blue bg-asamu-soft p-3 text-sm">{item.summary}</p><div className="writeup-content max-h-80 overflow-y-auto border border-asamu-line p-4" dangerouslySetInnerHTML={{ __html: item.contentHTML }} />{item.status === 'review' && <div className="mt-4 flex gap-2"><PixelButton onClick={() => review(item, 'publish')}>审核通过</PixelButton><PixelButton variant="danger" onClick={() => review(item, 'reject')}>驳回修改</PixelButton></div>}</PixelCard>)}</div> : <div className="space-y-4">{cases.map((item) => <PixelCard title={<span>案件 {item.id.slice(0, 8)} <PixelTag tone={item.status === 'closed' ? 'green' : 'red'}>{item.status}</PixelTag></span>} key={item.id}><p className="text-sm font-semibold text-asamu-muted">风险等级：{item.risk_level || '—'} · 风险分：{item.riskScore ?? item.risk_score ?? 0} · {new Date(item.createdAt || item.created_at || '').toLocaleString('zh-CN')}</p>{item.resolution && <p className="mt-3 text-sm">结论：{item.resolution}</p>}{item.status !== 'closed' && <PixelButton className="mt-4" variant="danger" onClick={() => resolve(item)}>调查并结案</PixelButton>}</PixelCard>)}</div>}</>
+}

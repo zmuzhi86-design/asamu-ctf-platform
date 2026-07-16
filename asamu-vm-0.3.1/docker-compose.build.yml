@@ -1,0 +1,39 @@
+services:
+  init:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      args:
+        GO_BUILD_IMAGE: ${GO_BUILD_IMAGE:-golang:1.25.12-alpine3.24}
+        ALPINE_BASE_IMAGE: ${ALPINE_BASE_IMAGE:-alpine:3.24}
+        GOPROXY: ${GOPROXY:-https://goproxy.cn|https://proxy.golang.org|direct}
+        GOSUMDB: ${GOSUMDB:-sum.golang.google.cn}
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      args:
+        GO_BUILD_IMAGE: ${GO_BUILD_IMAGE:-golang:1.25.12-alpine3.24}
+        ALPINE_BASE_IMAGE: ${ALPINE_BASE_IMAGE:-alpine:3.24}
+        GOPROXY: ${GOPROXY:-https://goproxy.cn|https://proxy.golang.org|direct}
+        GOSUMDB: ${GOSUMDB:-sum.golang.google.cn}
+
+  worker:
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+      args:
+        GO_BUILD_IMAGE: ${GO_BUILD_IMAGE:-golang:1.25.12-alpine3.24}
+        ALPINE_BASE_IMAGE: ${ALPINE_BASE_IMAGE:-alpine:3.24}
+        GOPROXY: ${GOPROXY:-https://goproxy.cn|https://proxy.golang.org|direct}
+        GOSUMDB: ${GOSUMDB:-sum.golang.google.cn}
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE: /api/v1
+        NODE_BUILD_IMAGE: ${NODE_BUILD_IMAGE:-node:22.18-alpine3.22}
+        NGINX_BASE_IMAGE: ${NGINX_BASE_IMAGE:-nginx:1.28-alpine}

@@ -1,0 +1,16 @@
+.git
+.github
+.agents
+.codex
+**/.gocache
+**/.gomodcache
+**/node_modules
+**/dist
+**/coverage
+**/*.log
+.env
+.env.docker
+deployment-credentials.txt
+postgres-data
+redis-data
+asset-data

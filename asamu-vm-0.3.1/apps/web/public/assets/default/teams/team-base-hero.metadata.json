@@ -1,0 +1,22 @@
+{
+  "source": "战队基地推荐卡  战队广场主视觉.png",
+  "width": 1916,
+  "height": 821,
+  "aspectRatio": 2.3337,
+  "hasAlpha": true,
+  "dominantColor": "#fafafa",
+  "sha256": "10d73ed64031dca68f408e0f829ed79b2d61635f6703de1deaffdb9df496d274",
+  "safeArea": {
+    "top": 8,
+    "right": 8,
+    "bottom": 8,
+    "left": 42
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "right center",
+  "version": 1
+}

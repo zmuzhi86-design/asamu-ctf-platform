@@ -1,0 +1,14 @@
+BEGIN;
+DROP TABLE IF EXISTS asset_audit_logs;
+DROP TABLE IF EXISTS instance_operations;
+DROP TABLE IF EXISTS challenge_instances;
+DROP TABLE IF EXISTS visual_review_runs;
+DROP TABLE IF EXISTS page_backgrounds;
+DROP TABLE IF EXISTS asset_bindings;
+DROP TABLE IF EXISTS asset_tag_links;
+ALTER TABLE IF EXISTS assets DROP CONSTRAINT IF EXISTS assets_current_version_fk;
+DROP TABLE IF EXISTS asset_versions;
+DROP TABLE IF EXISTS assets;
+DROP TABLE IF EXISTS asset_tags;
+DROP TABLE IF EXISTS asset_categories;
+COMMIT;

@@ -1,0 +1,22 @@
+{
+  "source": "等级素材/超神.png",
+  "width": 1254,
+  "height": 1254,
+  "aspectRatio": 1.0,
+  "hasAlpha": true,
+  "dominantColor": "#fbf9f9",
+  "sha256": "c43b6f0f764bbfa44b972098ed3f8bdacacc86cc75a0af22a43d44b6c2a106e0",
+  "safeArea": {
+    "top": 8,
+    "right": 8,
+    "bottom": 8,
+    "left": 8
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "center",
+  "version": 1
+}

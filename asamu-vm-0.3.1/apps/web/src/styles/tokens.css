@@ -1,0 +1,29 @@
+:root {
+  --asamu-canvas: #F7FAFF;
+  --asamu-grid: #DDEBFF;
+  --asamu-ink: #10233F;
+  --asamu-blue: #1677FF;
+  --asamu-blue-dark: #0057D9;
+  --asamu-yellow: #FFE16A;
+  --asamu-yellow-dark: #FFC83D;
+  --asamu-success: #2ECC71;
+  --asamu-danger: #FF4D4F;
+  --asamu-muted: #66758F;
+  --asamu-card: #FFFFFF;
+  --asamu-soft: #EEF5FF;
+  --asamu-line: #C8DDF8;
+  --asamu-shadow: #10233F;
+}
+
+.theme-dark {
+  --asamu-canvas: #0B172A;
+  --asamu-grid: #1C3152;
+  --asamu-ink: #EAF2FF;
+  --asamu-blue: #4DA3FF;
+  --asamu-blue-dark: #1677FF;
+  --asamu-muted: #9CB3D4;
+  --asamu-card: #10233F;
+  --asamu-soft: #142B49;
+  --asamu-line: #29466F;
+  --asamu-shadow: #020817;
+}

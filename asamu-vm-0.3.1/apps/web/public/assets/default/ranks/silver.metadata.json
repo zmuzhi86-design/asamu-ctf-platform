@@ -1,0 +1,22 @@
+{
+  "source": "等级素材/白银.png",
+  "width": 1254,
+  "height": 1254,
+  "aspectRatio": 1.0,
+  "hasAlpha": true,
+  "dominantColor": "#f6f6f6",
+  "sha256": "0f4b1d21fa144ed5a0ea8673f24874a8352deca6e23b152850aed79832670ad9",
+  "safeArea": {
+    "top": 8,
+    "right": 8,
+    "bottom": 8,
+    "left": 8
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "center",
+  "version": 1
+}

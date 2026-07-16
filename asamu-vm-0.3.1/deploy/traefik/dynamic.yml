@@ -1,0 +1,27 @@
+http:
+  routers:
+    asamu-http:
+      entryPoints: [web]
+      rule: PathPrefix(`/`)
+      middlewares: [redirect-https]
+      service: asamu-web
+    asamu-https:
+      entryPoints: [websecure]
+      rule: PathPrefix(`/`)
+      service: asamu-web
+      tls: {}
+  middlewares:
+    redirect-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+  services:
+    asamu-web:
+      loadBalancer:
+        servers:
+          - url: http://web:80
+
+tls:
+  certificates:
+    - certFile: /etc/traefik/certs/tls.crt
+      keyFile: /etc/traefik/certs/tls.key

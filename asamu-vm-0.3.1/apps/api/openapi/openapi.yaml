@@ -1,0 +1,328 @@
+openapi: 3.1.0
+info:
+  title: asamu Platform API
+  version: 1.0.0
+  description: CTF 训练、比赛、动态靶场、内容和运营接口。
+servers:
+  - url: /api/v1
+security:
+  - bearerAuth: []
+paths:
+  /auth/register:
+    post:
+      security: []
+      summary: 注册账号
+      responses: { '201': { description: 注册成功 }, '409': { $ref: '#/components/responses/Conflict' } }
+  /auth/login:
+    post:
+      security: []
+      summary: 登录并签发访问令牌及 HttpOnly 刷新 Cookie
+      responses: { '200': { description: 登录成功 }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /auth/verify-email:
+    post:
+      security: []
+      summary: 使用一次性令牌验证邮箱
+      responses: { '200': { description: 邮箱已验证 }, '400': { description: 令牌无效或过期 } }
+  /auth/verification-email:
+    post:
+      summary: 重新发送邮箱验证邮件
+      responses: { '202': { description: 邮件已进入 outbox } }
+  /auth/forgot-password:
+    post:
+      security: []
+      summary: 请求密码重置邮件（始终返回模糊响应）
+      responses: { '202': { description: 请求已受理 } }
+  /auth/reset-password:
+    post:
+      security: []
+      summary: 使用一次性令牌重置密码并撤销旧会话
+      responses: { '204': { description: 密码已重置 }, '400': { description: 令牌无效或过期 } }
+  /auth/email/change:
+    post:
+      summary: 验证当前密码并向新邮箱发送确认邮件
+      responses: { '202': { description: 确认邮件已进入 outbox }, '409': { $ref: '#/components/responses/Conflict' } }
+  /auth/confirm-email-change:
+    post:
+      security: []
+      summary: 确认新邮箱并撤销全部旧会话
+      responses: { '200': { description: 邮箱已修改 }, '400': { description: 令牌无效或过期 } }
+  /auth/refresh:
+    post:
+      security: []
+      summary: 轮换刷新令牌
+      responses: { '200': { description: 令牌已轮换 }, '401': { $ref: '#/components/responses/Unauthorized' } }
+  /me:
+    get:
+      summary: 当前登录用户
+      responses: { '200': { description: 用户与权限 } }
+  /challenges:
+    get:
+      security: []
+      summary: 公开题库
+      responses: { '200': { description: 分页题目列表 } }
+  /challenges/{id}:
+    get:
+      security: []
+      summary: 题目详情
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: 题目、Hint、附件、知识点和动态配置 } }
+  /learning/paths:
+    get:
+      security: []
+      summary: 已发布训练路线、阶段、题目和当前用户完成进度
+      responses: { '200': { description: 动态训练路线列表 } }
+  /learning/paths/{id}:
+    get:
+      security: []
+      summary: 训练路线详情
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: 路线详情 }, '404': { description: 路线不存在 } }
+  /challenges/{id}/instance/start:
+    post:
+      summary: 创建或启动隔离实例
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      responses: { '202': { description: 启动任务已创建 }, '409': { $ref: '#/components/responses/Conflict' } }
+  /challenges/{id}/instance/restart:
+    post:
+      summary: 重启当前实例，不清空环境、不轮换 Flag
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      responses: { '202': { description: 重启任务已创建 } }
+  /challenges/{id}/instance/stop:
+    post:
+      summary: 关闭实例并释放资源
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      responses: { '202': { description: 关闭任务已创建 } }
+  /challenges/{id}/instance/reset:
+    post:
+      summary: 销毁旧实例并创建干净实例，同时轮换动态 Flag
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      responses: { '202': { description: 重置任务已创建 } }
+  /challenges/{id}/submissions:
+    post:
+      summary: 提交 Flag
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: 判题结果 }, '429': { description: 提交过于频繁 } }
+  /competitions:
+    get:
+      security: []
+      summary: 比赛列表
+      responses: { '200': { description: 分页比赛列表 } }
+  /teams:
+    get:
+      security: []
+      summary: 战队列表
+      responses: { '200': { description: 分页战队列表 } }
+  /leaderboard:
+    get:
+      security: []
+      summary: 公共排行榜
+      responses: { '200': { description: 排名列表 } }
+  /me/writeups:
+    get:
+      summary: 当前用户的全部 WriteUp（含草稿、审核中和驳回稿）
+      responses: { '200': { description: 作者文章列表 } }
+  /me/writeups/{id}:
+    get:
+      summary: 读取当前用户自己的 WriteUp 编辑数据
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: 包含 Markdown 原文与审核状态 } }
+  /notifications:
+    get:
+      summary: 当前用户通知列表
+      responses: { '200': { description: 通知分页列表 } }
+  /writeups/{id}/favorite:
+    put:
+      summary: 设置或取消 WriteUp 收藏
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: 收藏状态已更新 } }
+  /me/team:
+    get:
+      summary: 当前用户的战队管理聚合数据
+      responses: { '200': { description: 战队、角色、待审申请与邀请 } }
+  /teams/{id}/transfer-captain:
+    post:
+      summary: 队长转让
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '204': { description: 队长已转让 } }
+  /teams/{id}/avatar:
+    post:
+      summary: 队长上传战队头像
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      requestBody:
+        required: true
+        content: { multipart/form-data: { schema: { type: object, required: [file], properties: { file: { type: string, format: binary, description: PNG、JPEG 或 WebP，最大 5 MB } } } } }
+      responses: { '200': { description: 战队头像已更新 }, '403': { description: 仅队长可上传 }, '413': { description: 文件过大 }, '415': { description: 文件类型不支持 } }
+  /teams/{id}/members/{userId}:
+    delete:
+      summary: 移除战队成员
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }, { name: userId, in: path, required: true, schema: { type: string } }]
+      responses: { '204': { description: 成员已移除 } }
+  /me/profile:
+    patch:
+      summary: 更新当前用户资料与公开隐私设置
+      responses: { '200': { description: 更新后的私有资料 } }
+  /admin/assets:
+    get:
+      summary: 素材中心列表
+      responses: { '200': { description: 分页素材列表 } }
+    post:
+      summary: 上传素材
+      requestBody:
+        required: true
+        content: { multipart/form-data: { schema: { type: object, required: [file, assetKey, name], properties: { file: { type: string, format: binary }, assetKey: { type: string }, name: { type: string } } } } }
+      responses: { '201': { description: 素材草稿已创建 } }
+  /admin/instances:
+    get:
+      summary: 管理员实例列表（安全视图）
+      responses: { '200': { description: 包含题目、归属主体、状态和版本的分页实例列表 } }
+  /admin/instances/{id}:
+    get:
+      summary: 管理员实例详情与最近生命周期操作
+      parameters: [{ name: id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses: { '200': { description: 不包含 Flag、密文及底层运行时 ID 的实例详情 }, '404': { description: 实例不存在 } }
+  /admin/instances/{id}/logs:
+    get:
+      summary: 管理员读取最近 200 条脱敏运行事件
+      parameters: [{ name: id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses: { '200': { description: 敏感字段已递归脱敏 } }
+  /admin/instances/{id}/stop:
+    post:
+      summary: 管理员停止实例（高风险、原子审计）
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/AdminInstanceTransition' } } }
+      responses: { '202': { description: 停止任务已创建 }, '409': { description: 状态、版本或幂等键冲突 } }
+  /admin/instances/{id}/reset:
+    post:
+      summary: 管理员重置实例并轮换 Flag（高风险、原子审计）
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/AdminInstanceTransition' } } }
+      responses: { '202': { description: 重置任务已创建 }, '409': { description: 状态、版本或幂等键冲突 } }
+  /admin/runtime/workers:
+    get:
+      summary: 查询 Runtime Worker 节点、容量、协议与镜像缓存
+      responses: { '200': { description: Worker 节点列表；超过 90 秒无心跳的节点显示为 offline } }
+  /admin/runtime/workers/{workerId}/drain:
+    patch:
+      summary: 排空或恢复 Worker 新实例调度
+      parameters: [{ name: workerId, in: path, required: true, schema: { type: string, maxLength: 128 } }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [draining, reason, expectedVersion]
+              properties:
+                draining: { type: boolean }
+                reason: { type: string, minLength: 4, maxLength: 500 }
+                expectedVersion: { type: integer, format: int64, minimum: 1 }
+      responses: { '200': { description: Worker 调度状态已更新并写入审计日志 }, '409': { description: Worker 版本冲突 } }
+  /admin/registry-credentials:
+    get:
+      summary: List private-registry credentials without secret material
+      responses: { '200': { description: Safe credential metadata; token is represented only by tokenConfigured } }
+    post:
+      summary: Encrypt and store a private-registry credential
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [name, registryHost, username, token]
+              properties:
+                name: { type: string, minLength: 1, maxLength: 100 }
+                registryHost: { type: string, maxLength: 255, example: registry.example.com:5000 }
+                username: { type: string, minLength: 1, maxLength: 200 }
+                token: { type: string, minLength: 8, maxLength: 4096, writeOnly: true }
+      responses: { '201': { description: Credential encrypted and audit record committed atomically }, '409': { description: Registry host already configured } }
+  /admin/learning/paths:
+    get:
+      summary: 管理端训练路线列表
+      responses: { '200': { description: 包含草稿、已发布及归档路线 } }
+    post:
+      summary: 新增训练路线及阶段题目编排
+      responses: { '201': { description: 路线草稿已创建 } }
+  /admin/learning/paths/{id}:
+    put:
+      summary: 更新训练路线及阶段题目编排
+      parameters: [{ name: id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses: { '200': { description: 路线已更新 } }
+    delete:
+      summary: 下架并归档训练路线
+      parameters: [{ name: id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses: { '204': { description: 路线已归档 } }
+  /admin/learning/paths/{id}/publish:
+    post:
+      summary: 发布包含至少一道已发布题目的训练路线
+      parameters: [{ name: id, in: path, required: true, schema: { type: string, format: uuid } }]
+      responses: { '200': { description: 路线已发布 }, '422': { description: 路线内容不完整 } }
+  /admin/challenges/{id}:
+    delete:
+      summary: 下架并归档题目，保留历史提交和不可变版本
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses: { '204': { description: 题目已归档 } }
+  /admin/registry-credentials/{id}:
+    put:
+      summary: Update, rotate, enable or disable a registry credential
+      parameters: [{ name: id, in: path, required: true, schema: { type: string, format: uuid } }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [name, username, enabled, reason, expectedVersion]
+              properties:
+                name: { type: string, minLength: 1, maxLength: 100 }
+                username: { type: string, minLength: 1, maxLength: 200 }
+                token: { type: string, minLength: 8, maxLength: 4096, writeOnly: true, description: Omit to retain the existing token }
+                enabled: { type: boolean }
+                reason: { type: string, minLength: 4, maxLength: 500 }
+                expectedVersion: { type: integer, format: int64, minimum: 1 }
+      responses: { '200': { description: Safe credential metadata }, '409': { description: Optimistic-lock conflict } }
+  /internal/runtime/registry-credentials/{id}/lease:
+    post:
+      summary: Lease registry authentication to the Worker that owns an instance
+      security: []
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+        - { name: X-Worker-ID, in: header, required: true, schema: { type: string, maxLength: 128 } }
+        - { name: X-Worker-Token, in: header, required: true, schema: { type: string, writeOnly: true } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [instanceId], properties: { instanceId: { type: string, format: uuid } } } } }
+      responses: { '200': { description: No-store response with a 60-second usage hint; every lease is audited }, '401': { description: Worker authentication or health check failed }, '403': { description: Instance ownership or immutable revision binding failed } }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+  schemas:
+    AdminInstanceTransition:
+      type: object
+      additionalProperties: false
+      required: [reason, expectedVersion]
+      properties:
+        reason: { type: string, minLength: 4, maxLength: 500, description: 可审计的操作理由 }
+        expectedVersion: { type: integer, format: int64, minimum: 1, description: 详情接口返回的实例 version }
+  responses:
+    Unauthorized: { description: 未登录或令牌失效 }
+    Conflict: { description: 资源状态冲突 }

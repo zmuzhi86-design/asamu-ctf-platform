@@ -1,0 +1,22 @@
+{
+  "source": "首页四张素材/ChatGPT Image 2026年7月11日 13_04_40 (1).png",
+  "width": 1254,
+  "height": 1254,
+  "aspectRatio": 1.0,
+  "hasAlpha": true,
+  "dominantColor": "#fafafa",
+  "sha256": "806cd5c03ac0567f2cc0997d32a67d2e8aeb3bf0fcf3766e195c80eb8a4f41b1",
+  "safeArea": {
+    "top": 8,
+    "right": 8,
+    "bottom": 8,
+    "left": 8
+  },
+  "focalPoint": {
+    "x": 50,
+    "y": 50
+  },
+  "recommendedObjectFit": "contain",
+  "recommendedObjectPosition": "center",
+  "version": 1
+}
