@@ -1,4 +1,40 @@
+## 🖼️ 项目预览
 
+
+
+### 平台首页
+
+
+
+<p align="center">
+
+  <img src="docs/images/index.png" width="100%" alt="ASAMU 平台首页"> 
+
+</p>
+
+
+
+### 题目详情与动态靶场
+
+
+
+<p align="center">
+
+  <img src="docs/images/game.png" width="100%" alt="ASAMU 动态靶场"> 
+
+</p>
+
+
+
+### 管理后台
+
+
+
+<p align="center">
+
+  <img src="docs/images/study.png" width="100%" alt="ASAMU 管理后台"> 
+
+</p>
 <h1 align="center">asamu</h1>
 
 <p align="center">
