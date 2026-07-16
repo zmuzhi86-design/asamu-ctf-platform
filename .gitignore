@@ -1,0 +1,61 @@
+# Runtime secrets and generated deployment files
+.env
+.env.*
+!.env.example
+!.env.docker.example
+.env.docker
+deployment-credentials.txt
+
+# Certificates and private keys
+deploy/traefik/certs/*
+!deploy/traefik/certs/README.md
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Backups, exports and local archives
+backups/
+backup/
+*.backup
+*.dump
+*.sql.gz
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Logs and temporary files
+*.log
+*.pid
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+.cache/
+tmp/
+var/
+
+# Frontend
+node_modules/
+dist/
+.npm-cache/
+*.tsbuildinfo
+coverage/
+
+# Go build output
+bin/
+*.test
+*.out
+vendor/
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local Docker override files
+docker-compose.override.yml
+compose.override.yml
